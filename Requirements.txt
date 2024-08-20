@@ -1,1 +1,1 @@
-# Requirements initialization
+streamlit
