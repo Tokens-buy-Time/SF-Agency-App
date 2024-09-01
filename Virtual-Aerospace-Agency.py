@@ -1,6 +1,17 @@
 import streamlit as st
-import plotly.express as px
-import pandas as pd
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Example plot
+st.title("Matplotlib Example")
+
+x = np.linspace(0, 10, 100)
+y = np.sin(x)
+
+fig, ax = plt.subplots()
+ax.plot(x, y)
+
+st.pyplot(fig)
 
 # Function to set the page configuration
 def configure_page():
