@@ -22,4 +22,27 @@ elif page == "Mission Planner":
     launch_date = st.date_input("Launch Date")
     
     if st.button("Start Mission"):
-​⬤
+        if mission_name and launch_date:
+            st.success(f"Mission '{mission_name}' of type '{mission_type}' scheduled for {launch_date} at {mission_location} with objectives: {mission_objectives}.")
+        else:
+            st.error("Please fill in all required fields (Mission Name and Launch Date).")
+
+# Settings Page
+elif page == "Settings":
+    st.title("Settings")
+    dark_mode = st.checkbox("Enable Dark Mode")
+    
+    notifications = st.checkbox("Enable Notifications")
+    user_profile = st.text_input("User Profile Name")
+    
+    if dark_mode:
+        st.write("Dark Mode is enabled.")
+    else:
+        st.write("Dark Mode is disabled.")
+    
+    if notifications:
+        st.write("Notifications are enabled.")
+    else:
+        st.write("Notifications are disabled.")
+    
+    st.write(f"Profile: {user_profile}")
