@@ -16,17 +16,10 @@ elif page == "Mission Planner":
     
     mission_name = st.text_input("Mission Name")
     mission_type = st.selectbox("Mission Type", ["Reconnaissance", "Exploration", "Research", "Defense"])
+    mission_objectives = st.text_area("Mission Objectives")
+    mission_location = st.text_input("Mission Location")
+    team_members = st.text_input("Team Members")
     launch_date = st.date_input("Launch Date")
     
     if st.button("Start Mission"):
-        st.success(f"Mission '{mission_name}' of type '{mission_type}' scheduled for {launch_date}!")
-
-# Settings Page
-elif page == "Settings":
-    st.title("Settings")
-    dark_mode = st.checkbox("Enable Dark Mode")
-    
-    if dark_mode:
-        st.write("Dark Mode is enabled.")
-    else:
-        st.write("Dark Mode is disabled.")
+​⬤
