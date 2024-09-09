@@ -1,17 +1,4 @@
 import streamlit as st
-import matplotlib.pyplot as plt
-import numpy as np
-
-# Example plot
-st.title("Matplotlib Example")
-
-x = np.linspace(0, 10, 100)
-y = np.sin(x)
-
-fig, ax = plt.subplots()
-ax.plot(x, y)
-
-st.pyplot(fig)
 
 # Function to set the page configuration
 def configure_page():
@@ -36,13 +23,13 @@ def add_custom_styles():
 # Function to create sidebar navigation
 def create_sidebar():
     st.sidebar.title("Navigation")
-    page = st.sidebar.radio("Go to", ["Welcome", "Mission Planner", "Data Visualization", "Settings"])
+    page = st.sidebar.radio("Go to", ["Welcome", "Mission Planner", "Settings"])
     return page
 
 # Function for welcome page
 def show_welcome():
     st.title("Welcome to the Virtual Aerospace Agency")
-    st.write("Explore aerospace missions, data visualization, and more with this interactive app.")
+    st.write("Explore aerospace missions and manage settings from the sidebar.")
 
 # Function for mission planner
 def mission_planner():
@@ -55,20 +42,6 @@ def mission_planner():
     
     if st.button("Start Mission"):
         st.success(f"Mission '{mission_name}' of type '{mission_type}' scheduled for {launch_date}!")
-
-# Function for data visualization
-def data_visualization():
-    st.header("Data Visualization")
-    st.write("Visualize aerospace data with interactive charts.")
-    
-    # Example data for visualization
-    data = pd.DataFrame({
-        "Category": ["Category A", "Category B", "Category C"],
-        "Values": [10, 20, 15]
-    })
-    
-    fig = px.bar(data, x="Category", y="Values", title="Sample Data")
-    st.plotly_chart(fig)
 
 # Function for settings page
 def settings():
@@ -93,8 +66,6 @@ def main():
         show_welcome()
     elif page == "Mission Planner":
         mission_planner()
-    elif page == "Data Visualization":
-        data_visualization()
     elif page == "Settings":
         settings()
 
