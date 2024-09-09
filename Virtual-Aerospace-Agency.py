@@ -1,48 +1,74 @@
 import streamlit as st
 
-# Basic Sidebar Navigation
+# Sidebar Navigation
 st.sidebar.title("Navigation")
-page = st.sidebar.radio("Go to", ["Home", "Mission Planner", "Settings"])
+page = st.sidebar.radio("Go to", ["Home", "Job Postings", "Search Jobs", "AI Compliance Assistant", "Markup Calculator", "Settings"])
 
 # Home Page
 if page == "Home":
     st.title("Welcome to the Virtual Aerospace Agency")
-    st.write("This is the home page.")
+    st.write("This platform connects aerospace employers with top-tier contractors.")
 
-# Mission Planner Page
-elif page == "Mission Planner":
-    st.title("Mission Planner")
-    st.write("Plan your aerospace missions here.")
+# Job Postings (Employer)
+elif page == "Job Postings":
+    st.title("Create a Job Posting")
     
-    mission_name = st.text_input("Mission Name")
-    mission_type = st.selectbox("Mission Type", ["Reconnaissance", "Exploration", "Research", "Defense"])
-    mission_objectives = st.text_area("Mission Objectives")
-    mission_location = st.text_input("Mission Location")
-    team_members = st.text_input("Team Members")
-    launch_date = st.date_input("Launch Date")
+    job_title = st.text_input("Job Title")
+    job_description = st.text_area("Job Description")
+    job_location = st.text_input("Location")
+    job_salary = st.number_input("Salary", min_value=0)
     
-    if st.button("Start Mission"):
-        if mission_name and launch_date:
-            st.success(f"Mission '{mission_name}' of type '{mission_type}' scheduled for {launch_date} at {mission_location} with objectives: {mission_objectives}.")
-        else:
-            st.error("Please fill in all required fields (Mission Name and Launch Date).")
+    if st.button("Post Job"):
+        st.success(f"Job '{job_title}' posted successfully!")
+        # In a full app, here you'd save this job posting to a database.
+
+# Search Jobs (Contractor)
+elif page == "Search Jobs":
+    st.title("Search for Jobs")
+    
+    # Placeholder jobs for demonstration
+    jobs = [
+        {"title": "Aerospace Engineer", "location": "USA", "salary": 120000},
+        {"title": "Technician", "location": "Canada", "salary": 80000},
+    ]
+    
+    search_query = st.text_input("Search by Job Title")
+    
+    for job in jobs:
+        if search_query.lower() in job["title"].lower():
+            st.write(f"**{job['title']}**")
+            st.write(f"Location: {job['location']}")
+            st.write(f"Salary: ${job['salary']} per year")
+            st.button("Apply", key=job["title"])
+
+# AI Compliance Assistant
+elif page == "AI Compliance Assistant":
+    st.title("AI Compliance Assistant")
+    
+    country = st.selectbox("Select Country", ["USA", "Canada", "Europe"])
+    if country == "USA":
+        st.write("USA compliance requirements: ...")
+    elif country == "Canada":
+        st.write("Canada compliance requirements: ...")
+    elif country == "Europe":
+        st.write("Europe compliance requirements: ...")
+
+# Markup Calculator
+elif page == "Markup Calculator":
+    st.title("Markup Rate Calculator")
+    
+    base_rate = st.number_input("Base Pay Rate", min_value=0.0)
+    markup_percentage = st.number_input("Markup Percentage", min_value=0.0)
+    
+    final_rate = base_rate + (base_rate * (markup_percentage / 100))
+    st.write(f"Final Rate: ${final_rate:.2f}")
 
 # Settings Page
 elif page == "Settings":
     st.title("Settings")
     dark_mode = st.checkbox("Enable Dark Mode")
     
-    notifications = st.checkbox("Enable Notifications")
-    user_profile = st.text_input("User Profile Name")
-    
     if dark_mode:
         st.write("Dark Mode is enabled.")
     else:
         st.write("Dark Mode is disabled.")
-    
-    if notifications:
-        st.write("Notifications are enabled.")
-    else:
-        st.write("Notifications are disabled.")
-    
-    st.write(f"Profile: {user_profile}")
