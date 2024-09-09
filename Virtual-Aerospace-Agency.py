@@ -1,5 +1,4 @@
 import streamlit as st
-
 # Function to set the page configuration
 def configure_page():
     st.set_page_config(
