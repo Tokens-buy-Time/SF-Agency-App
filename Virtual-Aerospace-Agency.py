@@ -1,5 +1,4 @@
 import streamlit as st
-
 st.title("Welcome to the Virtual Aerospace Agency")
 #st.image("Virtual-Agency.gif", caption="Virtual Aerospace Agency constitutes instant access to on the fly expertise", use_column_width=True)
 st.write(" ")
