@@ -1,11 +1,11 @@
 import streamlit as st
+st.image("Virtual-Agency.gif", caption="Virtual Aerospace Agency", use_column_width=True)
+st.write(" ")
+st.write("Spin up expert, experienced, insightful, IPDT teams, to tackle difficult, short duration - less than 3 month long projects - and disnand them on completion of their assignments.")
+st.write(" "
 
 # Sidebar Navigation
 st.sidebar.title("Navigation")
-    st.image("Virtual-Agency.gif", caption="Virtual Aerospace Agency", use_column_width=True)
-    st.write(" ")
-    st.write("Spin up expert, experienced, insightful, IPDT teams, to tackle difficult, short duration - less than 3 month long projects - and disnand them on completion of their assignments.")
-    st.write(" ")
 page = st.sidebar.radio("Go to", ["Home", "Job Postings", "Search Jobs", "AI Compliance Assistant", "Markup Calculator", "Settings"])
 
 # Home Page
