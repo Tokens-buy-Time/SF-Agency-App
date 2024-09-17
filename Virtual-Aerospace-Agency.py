@@ -2,7 +2,7 @@ import streamlit as st
 st.title("Welcome to the Virtual Aerospace Agency")
 st.image("Virtual-Agency.jpg", caption="Virtual Aerospace Agency constitutes instant access to on the fly expertise", use_column_width=True)
 st.write(" ")
-st.write("Spin up expert, experienced, insightful, IPDT teams, to tackle difficult, short duration - less than 3 month long projects - and disnand them on completion of their assignments.")
+st.write("Spin up expert, experienced, insightful, IPDT teams, to tackle difficult, short duration - less than 3 months long - projects and disband them on successful completion of their assignments thereafter.")
 st.write(" ")
 
 # Sidebar Navigation
