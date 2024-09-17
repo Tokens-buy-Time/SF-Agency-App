@@ -11,7 +11,7 @@ page = st.sidebar.radio("Go to", ["Home", "Job Postings", "Search Jobs", "AI Com
 
 # Home Page
 if page == "Home":
-    st.title("Welcome to the Virtual Aerospace Agency")
+    st.title("The Virtual Aerospace Agency's mission : ")
     st.write("This platform connects aerospace employers with top-tier contractors.")
 
 # Job Postings (Employer)
