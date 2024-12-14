@@ -1,6 +1,6 @@
 import streamlit as st
 st.title("Welcome to the Virtual Aerospace Agency")
-st.image("Virtual-Agency.jpg", caption="Virtual Aerospace Agency constitutes instant access to on the fly expertise", use_column_width=True)
+st.image("Virtual-Agency.jpg", caption="Virtual Aerospace Agency constitutes instant access to on the fly expertise")
 st.write(" ")
 st.write("⚠️ - Look for the navigation icons '>' & '<' at the top of the screen. Use them to navigate through the App's various options & features.")
 st.write(" ")
